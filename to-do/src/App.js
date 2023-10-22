@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import './App.css'
 import Task from './components/task/Task';
 import TaskForm from './components/taskForm/TaskForm';
+import Search from './components/search/Search';
 
 export default function App(){
   // Utilizar useState para re-renderizar a variável de uma tarefa quando ela for alterada
@@ -26,6 +27,7 @@ export default function App(){
       isDone: false
     }
   ])
+  const [search, setSearch] = useState('')
 
   // Função que adiciona uma nova tarefa à lista
   const addTask = (description, category)=>{
@@ -65,9 +67,11 @@ export default function App(){
   return (
     <div className='app'>
       <h1>Lista de Tarefas</h1>
+      <Search search={search} setSearch={setSearch}/>
       <div className='task-list'>
-        {/*Percorre cada tarefa da lista (tasks) e retorna um componente com as informações dela */}
-        {tasks.map((task) => <Task key={task.id} task={task} removeTask={removeTask} completeTask={completeTask}/>)}
+        {/*Filtra as tarefas e exibe as correspondentes */}
+        {tasks.filter((task => task.description.toLowerCase().includes(search.toLowerCase())))
+        .map((task) => <Task key={task.id} task={task} removeTask={removeTask} completeTask={completeTask}/>)}
       </div>
       <TaskForm addTask={addTask}/>
     </div>);

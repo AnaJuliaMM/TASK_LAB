@@ -8,7 +8,3 @@ input, select{
     border-radius: 3px;
     width: 100%;
 }
-input{
-    /* Para que não passem da área do elemento-pai */
-    box-sizing: border-box;
-}
