@@ -30,7 +30,7 @@ export default function App(){
   ])
   const [search, setSearch] = useState('')
   const [filter, setFilter] = useState('All')
-  const [sort, setSort] = useState('')
+  const [sort, setSort] = useState('A-Z')
 
   // Função que adiciona uma nova tarefa à lista
   const addTask = (description, category)=>{
@@ -71,7 +71,7 @@ export default function App(){
     <div className='app'>
       <h1>Lista de Tarefas</h1>
       <Search search={search} setSearch={setSearch}/>
-      <Filter filter={filter} setFilter={setFilter}/>
+      <Filter filter={filter} setFilter={setFilter} sort={sort} setSort={setSort}/>
       <div className='task-list'>
         {/*Filtra as tarefas e exibe as correspondentes */}
         {tasks.filter( (task) => 
@@ -80,6 +80,10 @@ export default function App(){
         )
         .filter((task => 
           task.description.toLowerCase().includes(search.toLowerCase()))
+        )
+        .sort( (task, nextTask) => 
+          sort === "A-Z" ? task.description.localeCompare(nextTask.description) :  nextTask.description.localeCompare(task.description)
+
         )
         .map((task) => 
           <Task key={task.id} 
