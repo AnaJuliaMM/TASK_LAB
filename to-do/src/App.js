@@ -41,12 +41,33 @@ export default function App(){
     setTasks(newTasks)
   }
 
+  // Função de remoção de tarefas
+  const removeTask = (id) => {
+     // Array que recebe todos as tarefas que já estão na lista 
+     const newTasks = [...tasks]
+     // Retira o array que possui o id passado na função
+     const filteredTasks = newTasks.filter(task => task.id !== id ? task : null)
+     //Atualiza a lista oficial
+     setTasks(filteredTasks)
+  }
+
+
+  // Função para marcar tarefa como concluída
+  const completeTask = (id) => {
+    // Array que recebe todos as tarefas que já estão na lista 
+    const newTasks = [...tasks]
+    // Retira o array que possui o id passado na função
+    const filteredTasks = newTasks.map(task => task.id === id ? task.isDone= !task.isDone : task)
+    //Atualiza a lista oficial
+    setTasks(newTasks)
+ }
+
   return (
     <div className='app'>
       <h1>Lista de Tarefas</h1>
       <div className='task-list'>
         {/*Percorre cada tarefa da lista (tasks) e retorna um componente com as informações dela */}
-        {tasks.map((task) => <Task key={task.id} task={task}/>)}
+        {tasks.map((task) => <Task key={task.id} task={task} removeTask={removeTask} completeTask={completeTask}/>)}
       </div>
       <TaskForm addTask={addTask}/>
     </div>);

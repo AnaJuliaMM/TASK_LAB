@@ -8,7 +8,7 @@ const TaskForm = ({addTask}) => {
     const [description, setDescription] = useState('')
     const [category, setCategory] = useState('')
 
-    
+
     // Função que controla a lógica de submissão do formulário
     // Parâmetros: (e) - captura o evento
     const handleSubmission = (e) => {
@@ -47,7 +47,7 @@ const TaskForm = ({addTask}) => {
               <option value='Pessoal'>Pessoal</option>
               <option value='Espiritual'>Espiritual</option>
           </select>
-          <Button  type='submit' value='Create'/>
+          <Button type='submit' value='Create'/>
       </form>
     </div>
     

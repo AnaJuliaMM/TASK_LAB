@@ -2,16 +2,16 @@ import React from 'react'
 import Button from '../button/Button'
 import './Task.css'
 
-const Task = ({task}) => {
+const Task = ({task, removeTask, completeTask}) => {
   return (
-    <div className='task'>
+    <div className='task' style={{textDecoration: task.isDone? "line-through" : 'none' }}>
         <div className='content'>
         <p>{task.description}</p>
         <p className='category'>{task.category}</p>
         </div>
     <div>
-        <Button className='done' value='Done' type='button'/>
-        <Button className='remove' value='X' type='button'/>
+        <Button onClick={() => completeTask(task.id)} className='done' value='Done' type='button'/>
+        <Button onClick={() => removeTask(task.id)} className='remove' value='X' type='button'/>
     </div>
   </div>
   )
