@@ -27,14 +27,27 @@ export default function App(){
     }
   ])
 
+  // Função que adiciona uma nova tarefa à lista
+  const addTask = (description, category)=>{
+    // Array que recebe todos as tarefas que já estão na lista e uma nova tarefa
+    const newTasks = [...tasks, {
+      id: Math.floor(Math.random() * 10000),
+      description: description,
+      category: category,
+      idDone: false
+    }]
+
+    //Atualiza a lista oficial com a nova tarefa
+    setTasks(newTasks)
+  }
 
   return (
     <div className='app'>
       <h1>Lista de Tarefas</h1>
       <div className='task-list'>
         {/*Percorre cada tarefa da lista (tasks) e retorna um componente com as informações dela */}
-        {tasks.map((task) => <Task task={task}/>)}
+        {tasks.map((task) => <Task key={task.id} task={task}/>)}
       </div>
-      <TaskForm/>
+      <TaskForm addTask={addTask}/>
     </div>);
 }
