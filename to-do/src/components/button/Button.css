@@ -12,10 +12,4 @@ button{
 button:hover{
     opacity: 1;
 }
-.done{
-    background-color: #5cb85c;
-}
-.remove{
-    background-color: #d9534f;
-}
 

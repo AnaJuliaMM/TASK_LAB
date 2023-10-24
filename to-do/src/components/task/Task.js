@@ -10,8 +10,8 @@ const Task = ({task, removeTask, completeTask}) => {
         <p className='category'>{task.category}</p>
         </div>
     <div>
-        <Button onClick={() => completeTask(task.id)} className='done' value='Done' type='button'/>
-        <Button onClick={() => removeTask(task.id)} className='remove' value='X' type='button'/>
+        <Button onClick={() => completeTask(task.id)} style={{ backgroundColor: '#5cb85c'}} value='Done' type='button'/>
+        <Button onClick={() => removeTask(task.id)} style={{backgroundColor: '#d9534f'}} value='X' type='button'/>
     </div>
   </div>
   )
