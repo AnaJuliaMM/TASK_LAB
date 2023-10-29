@@ -28,8 +28,11 @@ export default function App(){
       isDone: false
     }
   ])
-  const [search, setSearch] = useState('')
+  // Variável de opção de procura
+  const [search, setSearch] = useState('') 
+  // Variável de opção de  filtro
   const [filter, setFilter] = useState('All')
+  // Variável de opção de  ordenação
   const [sort, setSort] = useState('A-Z')
 
   // Função que adiciona uma nova tarefa à lista
