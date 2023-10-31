@@ -1,6 +1,22 @@
-.search{
-    border-bottom: 1px solid #5555;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-
+.search input{
+    border-radius: 5px;
+    border: 1px solid hsl(0, 0%, 49%);
+    background: #FFF;
+    width: 40vw;
+    height: 3vh;
 }
+.search-box::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px; /* Ajuste conforme o tamanho do ícone */
+    height: 20px; /* Ajuste conforme o tamanho do ícone */
+    background: url('../../img/icon-search.png') center center no-repeat;
+    background-size: cover;
+    cursor: pointer;
+  }
+
+  
+  
