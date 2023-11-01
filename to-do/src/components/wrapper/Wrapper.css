@@ -3,3 +3,9 @@
     width: 95vw;
     background: #F9F9F9;
 }
+.create-task-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

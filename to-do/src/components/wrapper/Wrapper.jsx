@@ -83,7 +83,10 @@ export default function Wrapper() {
     <div className='wrapper_content'>
         <Header/>
         <main>
-          <TaskForm/>
+        <section className='create-task-form'>
+            <TaskForm/>
+        </section>
+          
         </main>
        
     </div>
