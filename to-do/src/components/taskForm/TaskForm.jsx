@@ -30,27 +30,26 @@ const TaskForm = ({addTask}) => {
 
 
   return (
-    <div className='todo-form'>
-      <h2>Create task</h2>
-      <form onSubmit={handleSubmission}>
+    <>
+      <form className='create_task_form' onSubmit={handleSubmission}>
           <input 
           type='text' 
-          placeholder='digite o título da tarefa' 
+          placeholder='Digite o título da tarefa' 
           onChange={(e) => setDescription(e.target.value)}
           value={description}
           />
           <select 
           onChange={(e) => setCategory(e.target.value)}
           value={category}>
-              <option value=''></option>
+              <option value=''>Category...</option>
               <option value='Profissional'>Profissional</option>
               <option value='Acadêmica'>Acadêmica</option>
               <option value='Pessoal'>Pessoal</option>
               <option value='Espiritual'>Espiritual</option>
           </select>
-          <Button type='submit' value='Create'/>
+          <Button type='submit' value='Create' style={{background: '#84B4FC', boxShadow: '0px 4px 2px rgba(0, 0, 0, 0.25)', borderRadius: 10}}/>
       </form>
-    </div>
+    </>
     
   )
 }

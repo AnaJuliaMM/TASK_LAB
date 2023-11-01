@@ -82,6 +82,9 @@ export default function Wrapper() {
   return (
     <div className='wrapper_content'>
         <Header/>
+        <main>
+          <TaskForm/>
+        </main>
        
     </div>
     

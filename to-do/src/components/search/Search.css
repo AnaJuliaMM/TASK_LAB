@@ -5,18 +5,7 @@
     width: 40vw;
     height: 3vh;
 }
-.search-box::after {
-    content: "";
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px; /* Ajuste conforme o tamanho do ícone */
-    height: 20px; /* Ajuste conforme o tamanho do ícone */
-    background: url('../../img/icon-search.png') center center no-repeat;
-    background-size: cover;
-    cursor: pointer;
-  }
+
 
   
   
