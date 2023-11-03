@@ -1,26 +1,11 @@
 .app{
-    max-width: 600px;
-    /* Centralizar: */
-    margin: 0 auto 300px; 
-    background-color: #efefef;
-    padding: 20px 30px;
-    border-radius: 10px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
 }
-h1{
-    text-align: center;
-}
-h2{
-    margin-bottom: 10px;
-}
-p{
-    margin: 10px 0;
-}
-input{
-    /* Para que não passem da área do elemento-pai */
-    box-sizing: border-box;
-}
-.task-list{
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #555;
+.aside{
+    height: 100vh;
+    width: 5vw;
+    background: rgba(78, 149, 255, 0.68);
 }
