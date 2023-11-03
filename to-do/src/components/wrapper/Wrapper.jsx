@@ -60,7 +60,6 @@ export default function Wrapper() {
     saveLocalStorage(filteredTasks)
   }
 
-
   // Função para marcar tarefa como concluída
   const completeTask = (id) => {
     // Array que recebe todos as tarefas que já estão na lista 
@@ -81,14 +80,15 @@ export default function Wrapper() {
 
   return (
     <div className='wrapper-content'>
-        <Header/>
+        <Header filter={filter} setFilter={setFilter} sort={sort} setSort={setSort}/>
         <main>
           <section className='create-task-form'>
               <TaskForm addTask={addTask}/>
           </section>
           <section className='task-list'>
-            {tasks.
-            map((task)=> <Task task={task} completeTask={completeTask} removeTask={removeTask}/>)}
+            {tasks
+            .filter(task => filter ==='All'? true : filter ==='Done'? task.isDone : !task.isDone)
+            .map(task=> <Task task={task} completeTask={completeTask} removeTask={removeTask}/>)}
           </section>
         </main>
     </div>

@@ -2,14 +2,14 @@ import React from 'react'
 import Search from '../search/Search'
 import Filter from '../filter/Filter'
 import './Header.css'
-export default function Header() {
+export default function Header({filter, setFilter, sort, setSort}) {
   return (
     <header>
         <div className='logo'>
           <h1>Routine Control</h1>
         </div>
         <Search/>
-        <Filter/>
+        <Filter filter={filter} setFilter={setFilter} sort={sort} setSort={setSort}/>
         
     </header>
   )
