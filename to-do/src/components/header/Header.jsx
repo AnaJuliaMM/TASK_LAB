@@ -9,6 +9,7 @@ export default function Header() {
           <h1>Routine Control</h1>
         </div>
         <Search/>
+        <Filter/>
         
     </header>
   )

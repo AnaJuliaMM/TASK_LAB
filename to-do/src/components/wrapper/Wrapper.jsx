@@ -87,7 +87,8 @@ export default function Wrapper() {
               <TaskForm addTask={addTask}/>
           </section>
           <section className='task-list'>
-            {tasks.map((task)=> <Task task={task} completeTask={completeTask} removeTask={removeTask}/>)}
+            {tasks.
+            map((task)=> <Task task={task} completeTask={completeTask} removeTask={removeTask}/>)}
           </section>
         </main>
     </div>
