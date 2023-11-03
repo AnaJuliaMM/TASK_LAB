@@ -75,6 +75,12 @@ export default function App(){
     localStorage.setItem('history', JSON.stringify(content))
   } 
 
+  //Estrutura da página
+  // Aside - tela azul
+  // header - logo, barra de pesquisa, filtros
+  // main - formulário e lista
+  // footer - direitos reservados
+  
 
   return (
     <div className='app'>
