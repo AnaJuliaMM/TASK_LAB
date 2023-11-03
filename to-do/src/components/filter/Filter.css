@@ -21,6 +21,7 @@
     border: none;
     border-radius: 3px;
     width: 8vw;
+    cursor: pointer;
     
 }
 .filter-sort{

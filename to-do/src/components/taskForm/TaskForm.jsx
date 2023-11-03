@@ -34,12 +34,12 @@ const TaskForm = ({addTask}) => {
       <form className='create_task_form' onSubmit={handleSubmission}>
           <input 
           type='text' 
-          placeholder='Digite o título da tarefa' 
+          placeholder='New task...' 
           onChange={(e) => setDescription(e.target.value)}
           value={description}
           />
           <select onChange={(e) => setCategory(e.target.value)} value={category}>
-              <option value=''>Category...</option>
+              <option value=''> Category</option>
               <option value='Profissional'>Profissional</option>
               <option value='Acadêmica'>Acadêmica</option>
               <option value='Pessoal'>Pessoal</option>

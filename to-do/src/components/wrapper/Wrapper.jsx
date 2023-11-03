@@ -80,15 +80,17 @@ export default function Wrapper() {
 
   return (
     <div className='wrapper-content'>
-        <Header filter={filter} setFilter={setFilter} sort={sort} setSort={setSort}/>
+        <Header filter={filter} setFilter={setFilter} sort={sort} setSort={setSort} search={search} setSearch={setSearch}/>
         <main>
           <section className='create-task-form'>
               <TaskForm addTask={addTask}/>
           </section>
           <section className='task-list'>
             {tasks
+            .filter(task => task.description.toLowerCase().includes(search.toLowerCase()) )
             .filter(task => filter ==='All'? true : filter ==='Done'? task.isDone : !task.isDone)
-            .map(task=> <Task task={task} completeTask={completeTask} removeTask={removeTask}/>)}
+            .sort((task, nextTask) => sort==='A-Z' ? task.description.localeCompare(nextTask.description) : nextTask.description.localeCompare(task.description))
+            .map(task=> <Task key={task.id} task={task} completeTask={completeTask} removeTask={removeTask}/>)}
           </section>
         </main>
     </div>
