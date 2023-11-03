@@ -1,7 +1,7 @@
 .wrapper-content{
     height: 100vh;
     width: 95vw;
-    background: #F5F5F5;
+    background: #f6f6f6;
 }
 .create-task-form{
     display: flex;
@@ -10,7 +10,10 @@
 
 }
 .task-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding-top: 6vh;
-    padding-left: 6vh;
+    
     
 }

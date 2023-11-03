@@ -9,7 +9,7 @@ import './Wrapper.css'
 //TO DO: Passar as funções como propriedade para o componente
 
 export default function Wrapper() {
-    // Utilizar useState para re-renderizar a variável de uma tarefa quando ela for alterada
+  // Utilizar useState para re-renderizar a variável de uma tarefa quando ela for alterada
   // O valor inicial da variável é uma lista(array) de objetos que representam tarefas
   const [tasks, setTasks] = useState([])
   // Variável de opção de procura
@@ -39,7 +39,7 @@ export default function Wrapper() {
       id: Math.floor(Math.random() * 10000),
       description: description,
       category: category,
-      idDone: false
+      isDone: false
     }]
 
     //Atualiza a lista oficial com a nova tarefa
@@ -65,7 +65,7 @@ export default function Wrapper() {
   const completeTask = (id) => {
     // Array que recebe todos as tarefas que já estão na lista 
     const newTasks = [...tasks]
-    // Transforma o array que possui o id passado na função
+    // Muda o status da tarefa para true (true=done)
     const filteredTasks = newTasks.map(task => task.id === id ? task.isDone= !task.isDone : task)
     //Atualiza a lista oficial
     setTasks(newTasks)
@@ -83,15 +83,13 @@ export default function Wrapper() {
     <div className='wrapper-content'>
         <Header/>
         <main>
-        <section className='create-task-form'>
-            <TaskForm/>
-        </section>
-        <section className='task-list'>
-          <Task task={{description:'a', category: "a"}}/>
-        </section>
-          
+          <section className='create-task-form'>
+              <TaskForm addTask={addTask}/>
+          </section>
+          <section className='task-list'>
+            {tasks.map((task)=> <Task task={task} completeTask={completeTask} removeTask={removeTask}/>)}
+          </section>
         </main>
-       
     </div>
     
   )
