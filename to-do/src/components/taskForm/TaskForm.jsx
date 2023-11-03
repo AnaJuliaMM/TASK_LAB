@@ -47,7 +47,7 @@ const TaskForm = ({addTask}) => {
               <option value='Pessoal'>Pessoal</option>
               <option value='Espiritual'>Espiritual</option>
           </select>
-          <Button type='submit' value='Create' style={{background: '#84B4FC', boxShadow: '0px 4px 2px rgba(0, 0, 0, 0.25)', borderRadius: 10}}/>
+          <Button style={{backgroundColor: 'rgba(78, 149, 255, 0.68)', boxShadow: '0px 4px 2px rgba(0, 0, 0, 0.25)'}} value='+' type='submit'/>
       </form>
     </>
     

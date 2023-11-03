@@ -1,13 +1,15 @@
 button{
-    background-color: #32191b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #fff;
-    padding: 5px 20px;
-    margin-right: 10px;
+    padding: 3px 7px;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
     opacity: 0.8;
     transition: .3s;
+   
 }
 button:hover{
     opacity: 1;

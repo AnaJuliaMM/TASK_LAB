@@ -1,11 +1,16 @@
-.wrapper_content{
+.wrapper-content{
     height: 100vh;
     width: 95vw;
-    background: #F9F9F9;
+    background: #F5F5F5;
 }
 .create-task-form{
     display: flex;
     justify-content: center;
     align-items: center;
 
+}
+.task-list{
+    padding-top: 6vh;
+    padding-left: 6vh;
+    
 }

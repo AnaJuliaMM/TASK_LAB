@@ -80,11 +80,14 @@ export default function Wrapper() {
 
 
   return (
-    <div className='wrapper_content'>
+    <div className='wrapper-content'>
         <Header/>
         <main>
         <section className='create-task-form'>
             <TaskForm/>
+        </section>
+        <section className='task-list'>
+          <Task task={{description:'a', category: "a"}}/>
         </section>
           
         </main>
