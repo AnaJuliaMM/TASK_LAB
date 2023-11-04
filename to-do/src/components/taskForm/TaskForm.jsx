@@ -34,18 +34,18 @@ const TaskForm = ({addTask}) => {
       <form className='create_task_form' onSubmit={handleSubmission}>
           <input 
           type='text' 
-          placeholder='New task...' 
+          placeholder='Digite uma nova tarefa...' 
           onChange={(e) => setDescription(e.target.value)}
           value={description}
           />
           <select onChange={(e) => setCategory(e.target.value)} value={category}>
-              <option value=''> Category</option>
+              <option value=''>Categoria</option>
               <option value='Profissional'>Profissional</option>
               <option value='Acadêmica'>Acadêmica</option>
               <option value='Pessoal'>Pessoal</option>
               <option value='Espiritual'>Espiritual</option>
           </select>
-          <Button style={{backgroundColor: 'rgba(78, 149, 255, 0.68)', boxShadow: '0px 2px 2px rgba(0, 0, 0, 0.15)', width:80, height:30}} value='Create' type='submit'/>
+          <Button style={{backgroundColor: 'rgba(78, 149, 255, 0.68)', boxShadow: '0px 2px 2px rgba(0, 0, 0, 0.15)', width:80, height:30}} value='Criar' type='submit'/>
       </form>
     </>
     

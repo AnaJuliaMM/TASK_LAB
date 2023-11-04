@@ -5,6 +5,7 @@ import Search from '../search/Search'
 import Filter from '../filter/Filter'
 import Header from '../header/Header'
 import './Wrapper.css'
+import Category from '../categories/Category'
 
 //TO DO: Passar as funções como propriedade para o componente
 
@@ -85,13 +86,23 @@ export default function Wrapper() {
           <section className='create-task-form'>
               <TaskForm addTask={addTask}/>
           </section>
-          <section className='task-list'>
-            {tasks
-            .filter(task => task.description.toLowerCase().includes(search.toLowerCase()) )
-            .filter(task => filter ==='All'? true : filter ==='Done'? task.isDone : !task.isDone)
-            .sort((task, nextTask) => sort==='A-Z' ? task.description.localeCompare(nextTask.description) : nextTask.description.localeCompare(task.description))
-            .map(task=> <Task key={task.id} task={task} completeTask={completeTask} removeTask={removeTask}/>)}
+          <section className='tasks-categories'>
+            <aside className='categories'>
+              <h3>Categorias</h3>
+              <Category color={{backgroundColor: '#F978FB'}} category='Pessoal'/>
+              <Category color={{backgroundColor: '#94F98B'}} category='Profissional'/>
+              <Category color={{backgroundColor: '#4E95FF'}} category='Acadêmico'/>
+              <Category color={{backgroundColor: '#ECFB34'}} category='Espiritual'/>
+            </aside>
+            <section className='task-list'>
+              {tasks
+              .filter(task => task.description.toLowerCase().includes(search.toLowerCase()) )
+              .filter(task => filter ==='All'? true : filter ==='Done'? task.isDone : !task.isDone)
+              .sort((task, nextTask) => sort==='A-Z' ? task.description.localeCompare(nextTask.description) : nextTask.description.localeCompare(task.description))
+              .map(task=> <Task key={task.id} task={task} completeTask={completeTask} removeTask={removeTask}/>)}
+            </section>
           </section>
+          
         </main>
     </div>
     

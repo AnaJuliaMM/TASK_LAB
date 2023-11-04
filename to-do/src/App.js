@@ -8,6 +8,5 @@ export default function App(){
     <div className='app'>
       <aside className='aside'></aside>
       <Wrapper/>
-
     </div>);
 }

@@ -7,8 +7,9 @@ button{
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    opacity: 0.8;
+    opacity: 0.9;
     transition: .3s;
+    font-weight: 700;
    
 }
 button:hover{
