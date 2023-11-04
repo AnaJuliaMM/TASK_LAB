@@ -1,15 +1,13 @@
 import React, {useState, useEffect} from 'react'
-import Task from '../task/Task'
-import TaskForm from '../taskForm/TaskForm'
-import Search from '../search/Search'
-import Filter from '../filter/Filter'
-import Header from '../header/Header'
-import './Wrapper.css'
-import Category from '../categories/Category'
+import Task from './components/task/Task'
+import TaskForm from './components/taskForm/TaskForm'
+import Header from './components/header/Header'
+import Category from './components/categories/Category'
+import './App.css'
 
-//TO DO: Passar as funções como propriedade para o componente
 
-export default function Wrapper() {
+
+export default function App(){
   // Utilizar useState para re-renderizar a variável de uma tarefa quando ela for alterada
   // O valor inicial da variável é uma lista(array) de objetos que representam tarefas
   const [tasks, setTasks] = useState([])
@@ -71,16 +69,17 @@ export default function Wrapper() {
     setTasks(newTasks)
     //Atualiza o localStorage
     saveLocalStorage(newTasks)
- }
+  }
 
   // Função para armazenamento no Local Storage
   const saveLocalStorage = (content)=>{
     localStorage.setItem('history', JSON.stringify(content))
   } 
 
-
   return (
-    <div className='wrapper-content'>
+    <div className='app'>
+      <aside className='aside'></aside>
+      <div className='wrapper'>
         <Header filter={filter} setFilter={setFilter} sort={sort} setSort={setSort} search={search} setSearch={setSearch}/>
         <main>
           <section className='create-task-form'>
@@ -102,33 +101,7 @@ export default function Wrapper() {
               .map(task=> <Task key={task.id} task={task} completeTask={completeTask} removeTask={removeTask}/>)}
             </section>
           </section>
-          
         </main>
-    </div>
-    
-  )
+      </div>
+    </div>);
 }
-
-
-
-// {/* <Search search={search} setSearch={setSearch}/>
-// <Filter filter={filter} setFilter={setFilter} sort={sort} setSort={setSort}/>
-
-// <div className='task-list'>
-//     {/*Filtra as tarefas e exibe as correspondentes */}
-
-//     {tasks.filter( (task) => 
-//     filter === 'All' ? true : filter === 'Done' ? task.isDone : !task.isDone )
-//     .filter((task => task.description.toLowerCase().includes(search.toLowerCase())))
-//     .sort( (task, nextTask) => 
-//     sort === "A-Z" ? task.description.localeCompare(nextTask.description) :  nextTask.description.localeCompare(task.description)
-
-//     )
-//     .map((task) => 
-//     <Task key={task.id} 
-//     task={task} 
-//     removeTask={removeTask} 
-//     completeTask={completeTask}/>
-//     )}
-// </div>
-// <TaskForm addTask={addTask}/> */}
