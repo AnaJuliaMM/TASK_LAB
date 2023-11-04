@@ -18,6 +18,8 @@ export default function App(){
   const [filter, setFilter] = useState('All')
   // Variável de opção de  ordenação
   const [sort, setSort] = useState('A-Z')
+  // Variável que armazena o id das tarefas
+  const [id, setId] = useState(0);
 
   
   // useEffect para atualizar a lista de tarefa com o conteúdo do localStorage toda vez que a página for recarregada
@@ -36,12 +38,15 @@ export default function App(){
   const addTask = (description, category)=>{
     // Array que recebe todos as tarefas que já estão na lista e uma nova tarefa
     const newTasks = [...tasks, {
-      id: Math.floor(Math.random() * 10000),
+      id: id,
       description: description,
       category: category,
       isDone: false
     }]
 
+    // Incrementar a lista de id 
+    setId(id + 1)
+    console.log(id);
     //Atualiza a lista oficial com a nova tarefa
     setTasks(newTasks)
     //Atualiza o localStorage
@@ -64,10 +69,12 @@ export default function App(){
   const removeAllTasks = () =>{
     // Requisitar confirmação do usuário
     const isConfirm = window.confirm("Você tem certeza que deseja deletar sua lista de tarefas?")
-    // Esvazia a lista de tarefas
-    isConfirm && setTasks([])
-    // Esvazia os dados armazenados
-    isConfirm && saveLocalStorage(tasks)
+    if(isConfirm){
+      // Esvazia a lista de tarefas
+      setTasks([])
+      // Esvazia os dados armazenados
+      saveLocalStorage(tasks)
+    }
 
   }
 
@@ -96,7 +103,7 @@ export default function App(){
         <main>
           <section className='create-task-form'>
               <TaskForm addTask={addTask}/>
-              <Button onClick={removeAllTasks} style={{backgroundColor: '#FF3434', height: 35, width: 90}} value='Delete all tasks' type='button'/>
+              <Button onClick={removeAllTasks} style={{backgroundColor: '#FF3434', height: 40, width: 90}} value='Delete all tasks' type='button'/>
           </section>
           <section className='tasks-categories'>
             <aside className='categories'>
@@ -111,7 +118,8 @@ export default function App(){
               .filter(task => task.description.toLowerCase().includes(search.toLowerCase()) )
               .filter(task => filter ==='All'? true : filter ==='Done'? task.isDone : !task.isDone)
               .sort((task, nextTask) => sort==='A-Z' ? task.description.localeCompare(nextTask.description) : nextTask.description.localeCompare(task.description))
-              .map(task=> <Task key={task.id} task={task} completeTask={completeTask} removeTask={removeTask}/>)}
+              .map(task=> 
+              <Task key={task.id} task={task} completeTask={completeTask} removeTask={removeTask}/>)}
             </section>
           </section>
         </main>
