@@ -17,7 +17,10 @@ const TaskForm = ({addTask}) => {
       e.preventDefault();
 
       // Caso algum dos campos estejam vazios, não continua a função
-      if(!description || !category) return;
+      if(!description || !category){
+        window.alert('Campos vazios!')
+        return;
+      } 
       
       // Função para criar tarefa nova
       addTask(description, category)

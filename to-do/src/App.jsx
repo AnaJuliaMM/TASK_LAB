@@ -4,6 +4,7 @@ import TaskForm from './components/taskForm/TaskForm'
 import Header from './components/header/Header'
 import Category from './components/categories/Category'
 import './App.css'
+import Button from './components/button/Button'
 
 
 
@@ -59,6 +60,17 @@ export default function App(){
     saveLocalStorage(filteredTasks)
   }
 
+  //Função que deleta todas as tarefas de uma única vez
+  const removeAllTasks = () =>{
+    // Requisitar confirmação do usuário
+    const isConfirm = window.confirm("Você tem certeza que deseja deletar sua lista de tarefas?")
+    // Esvazia a lista de tarefas
+    isConfirm && setTasks([])
+    // Esvazia os dados armazenados
+    isConfirm && saveLocalStorage(tasks)
+
+  }
+
   // Função para marcar tarefa como concluída
   const completeTask = (id) => {
     // Array que recebe todos as tarefas que já estão na lista 
@@ -84,6 +96,7 @@ export default function App(){
         <main>
           <section className='create-task-form'>
               <TaskForm addTask={addTask}/>
+              <Button onClick={removeAllTasks} style={{backgroundColor: '#FF3434', height: 35, width: 90}} value='Delete all tasks' type='button'/>
           </section>
           <section className='tasks-categories'>
             <aside className='categories'>

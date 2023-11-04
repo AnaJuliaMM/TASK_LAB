@@ -15,17 +15,14 @@
 }
 .create-task-form{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     padding-top: 30px;
-    
-
 }
 .tasks-categories{
     display: flex;
     gap: 40px;
     padding: 8vh 30px ;
-   
 }
 .categories{
     display: flex;
