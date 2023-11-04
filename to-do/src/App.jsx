@@ -89,9 +89,9 @@ export default function App(){
             <aside className='categories'>
               <h3>Categorias</h3>
               <Category color={{backgroundColor: '#F978FB'}} category='Pessoal'/>
-              <Category color={{backgroundColor: '#94F98B'}} category='Profissional'/>
-              <Category color={{backgroundColor: '#4E95FF'}} category='Acadêmico'/>
-              <Category color={{backgroundColor: '#ECFB34'}} category='Espiritual'/>
+              <Category color={{backgroundColor: '#4E95FF'}} category='Profissional'/>
+              <Category color={{backgroundColor: '#94F98B'}} category='Acadêmico'/>
+              <Category color={{backgroundColor: '#e0f219'}} category='Espiritual'/>
             </aside>
             <section className='task-list'>
               {tasks

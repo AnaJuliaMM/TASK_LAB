@@ -5,7 +5,7 @@ import './Task.css'
 const Task = ({task, removeTask, completeTask}) => {
   return (
     <div className='task' >
-      <span className='category-color'></span>
+      <span className= {`category-color ${task.category}`}></span>
       <div className='task-content'>
         <p style={{textDecoration: task.isDone &&  "line-through", color: task.isDone && '#868686'}}>{task.description}</p>
       </div>
@@ -19,5 +19,7 @@ const Task = ({task, removeTask, completeTask}) => {
 }
 
 export default Task
+
+
 
 

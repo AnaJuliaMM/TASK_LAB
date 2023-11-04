@@ -6,12 +6,12 @@
 }
 .aside{
     height: 100vh;
-    width: 3vw;
-    background: #4E95FF;
+    width: 2vw;
+    background: #191919;
 }
 .wrapper{
     height: 100vh;
-    width: 97vw;
+    width: 98vw;
     background: #f6f6f6;
 }
 .create-task-form{

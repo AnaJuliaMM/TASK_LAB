@@ -14,10 +14,21 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px 0px 0px 10px;
-    background: var(--tag-color-1, #F978FB);
     color: #eeeeee;
-    width: 5vw;
+    width: 4vw;
     height: 100%;
+}
+.Pessoal{
+    background:#F978FB;
+}
+.Profissional{
+    background:#4E95FF;
+}
+.Acadêmico{
+    background:#94F98B;
+}
+.Espiritual{
+    background:#e0f219;
 }
 .task-content{
     display: flex;
