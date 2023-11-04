@@ -1,16 +1,15 @@
 .app{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: row;
 }
 .aside{
-    height: 100vh;
     width: 2vw;
     background: #191919;
 }
 .wrapper{
-    height: 100vh;
     width: 98vw;
     background: #f6f6f6;
 }
@@ -37,6 +36,7 @@
     border-radius: 10px;
     background: #f1f0f0;
     box-shadow: 0px 4px 2px 0px rgba(127, 127, 127, 0.25);
+    height: 40vh;
 }
 .task-list{
     display: flex;
