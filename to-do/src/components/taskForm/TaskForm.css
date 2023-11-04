@@ -1,10 +1,23 @@
-.todo-form{
-    padding-bottom: 1.5rem;
+.create_task_form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center; 
+    border-radius: 5px;
+    background: #f1f0f0;
+    box-shadow: 0px 4px 4px 0px rgba(110, 110, 110, 0.25);
+    padding: 15px;
+    width: 60vw;
 }
-input, select{
+.create_task_form input, .create_task_form select{
+    background: #FFF;
     padding: 5px;
-    margin-bottom: 10px ;
-    border: 1px solid #DDD;
+    border: none;
     border-radius: 3px;
-    width: 100%;
+}
+.create_task_form select{
+    width: 10vw;;
+}
+.create_task_form input{
+    width: 30vw;
 }

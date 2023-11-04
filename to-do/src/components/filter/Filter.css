@@ -1,8 +1,5 @@
 .filter{
-    border-bottom: 1px solid #5555;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-
+    display: flex;
 }
 .filter-options{
     display: flex;
@@ -11,4 +8,25 @@
 }
 .filer-options div{
    flex: 1 1 0;
+}
+.filter-status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.filter-status select{
+    background: #e8e8e8;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    width: 8vw;
+    cursor: pointer;
+    
+}
+.filter-sort{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
