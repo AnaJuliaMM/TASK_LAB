@@ -13,8 +13,8 @@ TASK | LAB é uma aplicação de lista de tarefas que permite aos usuários gere
 - [ ] Editar o texto de uma tarefa existente - Próximas atualizações
 
 ## Linguagens / Tools
- <a><img src="https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipse&logoColor=white" target="_blank"></a>
- <a><img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" target="_blank"></a>
+ <a><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" target="_blank"></a>
+ <a><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" target="_blank"></a>
 
  
 ## Demonstração
@@ -32,7 +32,7 @@ git clone https://github.com/seu-usuario/task-lab.git
 ```
 Navegue até o diretório do projeto:
 ```
-cd task-lab
+cd to-do
 ```
 
 Instale as dependências do projeto:
